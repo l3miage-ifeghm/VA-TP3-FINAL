@@ -10,6 +10,5 @@ import java.util.Set;
 public class SessionProgrammationCreationRequest {
     private Long id;
     private String label;
-
     private Set<SessionProgrammationStepCreationRequest> steps;
 }
