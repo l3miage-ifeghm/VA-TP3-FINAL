@@ -54,3 +54,47 @@ public class CandidateControllerTest {
     }
 
 }
+
+// il ne faut pas faire un Mock dans le test du controller je sais mais je n'ai pas pu trouver comment faire
+
+/*@AutoConfigureTestDatabase
+@AutoConfigureWebTestClient
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect")
+public class CandidateControllerTest {
+    @Autowired
+    private TestRestTemplate testRestTemplate;
+
+    @Test
+    void testGetAverageCandidateFound(){
+        //GIVEN
+        final HttpHeaders headers = new HttpHeaders();
+
+
+        //WHEN
+        ResponseEntity<Double> response = testRestTemplate.exchange("/api/candidates/12/average", HttpMethod.GET, new HttpEntity<>(null, headers), Double.class);
+
+        //THEN
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody()).isEqualTo(13.32);
+    }
+
+
+    @Test
+    void testGetAverageCandidateNotFound(){
+        //GIVEN
+        final HttpHeaders headers = new HttpHeaders();
+
+        //WHEN
+        ResponseEntity<String> response = testRestTemplate.exchange("/api/candidates/13/average", HttpMethod.GET, new HttpEntity<>(null, headers), String.class);
+
+        //THEN
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
+
+}*/
+
+
+
+
+
